@@ -1,0 +1,16 @@
+# dependencias
+/node_modules
+
+# build de Next
+/.next
+/out
+next-env.d.ts
+
+# entorno y logs
+.env*.local
+npm-debug.log*
+*.tsbuildinfo
+
+# sistema
+.DS_Store
+Thumbs.db

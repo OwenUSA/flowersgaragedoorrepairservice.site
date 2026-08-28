@@ -16,24 +16,58 @@ externas). Mismo formato que la referencia de Trevino, con paleta cálida propia
 - [ ] La política declara Google Analytics, Google Ads y Meta Pixel, que **todavía no
       están instalados**. Si al final no se usan, quitar ese apartado.
 
+## Cómo se trabaja (Next.js, desde el 28 ago 2026)
+
+```bash
+npm install       # una vez
+npm run dev       # http://localhost:3000, recarga al guardar
+npm run build     # genera out/ con el sitio estatico completo
+```
+
+`npm run build` deja en **`out/`** exactamente lo mismo que había antes: HTML y
+CSS planos, sin servidor. Eso es lo que se sube al hosting, o lo que compilan
+Vercel / Netlify / GitHub Actions. **`out/` no se commitea** (está en
+`.gitignore`), igual que `node_modules` y `.next`.
+
 ## Estructura
 
 ```
-index.html                    ->  /                      home
-DelrayBeach/index.html        ->  /DelrayBeach           oficina principal (despacho)
-Doral/index.html              ->  /Doral
-FortLauderdale/index.html     ->  /FortLauderdale
-Jupiter/index.html            ->  /Jupiter
-WestPalmBeach/index.html      ->  /WestPalmBeach
-privacy-policy.html           ->  /privacy-policy.html
-css/styles.css                ->  estilos base (header, navbar, footer, botones, tarjetas)
-css/location.css              ->  componentes de las páginas de ubicación
-img/                          ->  logo + fotos (ver img/LEEME.txt)
-robots.txt  ·  sitemap.xml
+app/layout.jsx              <html>, CSS global y metadata compartida
+app/page.jsx                /                      home
+app/[city]/page.jsx         /DelrayBeach /Doral /FortLauderdale /Jupiter /WestPalmBeach
+app/privacy-policy/page.jsx /privacy-policy
+components/Header.jsx       cabecera + navbar + desplegable de Services
+components/Footer.jsx       pie de 4 columnas y la barra de llamada movil
+components/TopBar.jsx       franja superior de la home
+components/Icons.jsx        los 21 SVG del sitio, por nombre: <Icon name="pin" />
+data/site.js                TODO el contenido: marca, telefono, ciudades, servicios, FAQ
+css/styles.css              estilos base (header, navbar, footer, botones, tarjetas)
+css/location.css            componentes de las paginas de ubicacion
+public/img/                 logo y fotos, servidas en /img/...
+public/robots.txt · public/sitemap.xml · public/favicon.svg
+assets/originales/          los .jfif de Gemini sin tocar (NO se publican)
+docs/                       notas de imagenes y prompts
 ```
 
-Cada carpeta con `index.html` genera la URL limpia (`/WestPalmBeach`).
-Subí todo a la raíz del hosting.
+**Las cinco páginas de ciudad son una sola ruta.** `app/[city]/page.jsx` con
+`generateStaticParams()` genera las cinco en el build; lo que cambia entre ellas
+—dirección, ZIP, barrios, párrafo local, coordenadas— está en el array `cities`
+de `data/site.js`. Añadir una ciudad nueva es añadir un objeto a ese array.
+
+Las URLs limpias se conservan (`/Doral`) gracias a `trailingSlash: true` en
+`next.config.mjs`: el build escribe `out/Doral/index.html`. La única que cambió
+es la legal, de `/privacy-policy.html` a **`/privacy-policy`**.
+
+### Dónde tocar cada cosa
+
+| Quieres cambiar… | Archivo |
+|---|---|
+| Teléfono, correo, horario, marca | `data/site.js`, objeto `site` |
+| Una dirección, un barrio, el texto local de una ciudad | `data/site.js`, array `cities` |
+| Las tarjetas de servicio | `data/site.js`, `homeServices` / `cityServices` |
+| Las preguntas frecuentes (y su JSON-LD, que sale de ahí) | `data/site.js`, `faq` |
+| Colores y tipografía | `css/styles.css`, bloque `:root` |
+| Cabecera, pie, menú | `components/` |
 
 ## Datos del negocio
 
@@ -48,11 +82,13 @@ Subí todo a la raíz del hosting.
 
 ### Cambiar el teléfono
 
-Aparece en 3 formatos. Buscar y reemplazar en los 7 archivos `.html`:
+Ahora vive en un solo sitio: `data/site.js`, objeto `site.phone`. Hay que cambiar
+los cuatro campos (`href`, `display`, `long`, `schema`) y ya se propaga a las 7
+páginas, al JSON-LD y al pie:
 
-1. `+15617034820` → en los `href="tel:..."` (96 apariciones)
-2. `(561) 703-4820` → texto visible (33)
-3. `+1-561-703-4820` → dentro del JSON-LD (schema.org) (10)
+- `href: 'tel:+15617034820'`
+- `display: '(561) 703-4820'`
+- `long` y `schema`, para el texto largo y el JSON-LD
 
 ### Coverage areas
 
