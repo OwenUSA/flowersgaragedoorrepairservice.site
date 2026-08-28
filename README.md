@@ -1,4 +1,4 @@
-# Flower Garage Door Repair — flowersgaragedoorrepairservice.site
+# Flowers Garage Door Repair — flowersgaragedoorrepairservice.site
 
 Sitio estático en HTML + CSS puro (sin JavaScript, sin librerías, sin dependencias
 externas). Mismo formato que la referencia de Trevino, con paleta cálida propia.
@@ -39,7 +39,7 @@ Subí todo a la raíz del hosting.
 
 | Dato | Valor actual |
 |---|---|
-| Marca | Flower Garage Door Repair |
+| Marca | Flowers Garage Door Repair |
 | Dominio | flowersgaragedoorrepairservice.site |
 | Teléfono | +1 (561) 703-4820 — *inventado, cambiar* |
 | Email | service@flowersgaragedoorrepairservice.site |
@@ -77,7 +77,7 @@ texto de conocimiento local. Secciones, en orden:
 2. Hero — breadcrumb `Home / Locations / Ciudad`, badge `FL · ZIP`, H1 con ciudad + ZIP,
    párrafo, botones *Call* y *See the coverage map*, y 4 tarjetas de garantía
 3. Mapa + tarjeta **Garage door service in {Ciudad} — coverage** (despacho, teléfono, email, horario)
-4. **Why {ciudad} chooses Flower** — foto + 5 puntos con check *(id `#about`)*
+4. **Why {ciudad} chooses Flowers** — foto + 5 puntos con check *(id `#about`)*
 5. **How a {ciudad} visit works** — 4 puntos de proceso + foto
 6. **Our Garage Door Services in {ciudad}** — 6 tarjetas con `id` propio
 7. Nota de conocimiento local (texto propio de cada ciudad)
@@ -182,7 +182,7 @@ bloquea las tres cosas.
 | `img/logo-light.png` | el mismo logo con contorno crema, para el **pie oscuro** | 512×512, alfa real |
 | `img/home-hero.jpg` | fondo del hero de la home | 1920×1072 · 413 KB |
 | `img/hero-garage.jpg` | fondo del hero de las 5 páginas de ciudad | 1920×1072 · 309 KB |
-| `img/why-garage.jpg` | "Why {ciudad} chooses Flower" | 1200×896 · 121 KB |
+| `img/why-garage.jpg` | "Why {ciudad} chooses Flowers" | 1200×896 · 121 KB |
 | `img/process-garage.jpg` | "How a {ciudad} visit works" | 1200×896 · 116 KB |
 
 Total servido: **1,33 MB** (los originales de Gemini pesaban 16 MB). Los `.jfif`

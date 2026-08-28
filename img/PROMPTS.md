@@ -1,4 +1,4 @@
-# Prompts para Gemini — Flower Garage Door Repair
+# Prompts para Gemini — Flowers Garage Door Repair
 
 > **Estado (28 ago 2026):** entregados y conectados el logo, `hero-garage`,
 > `why-garage`, `process-garage` y `home-hero`. No queda ninguna pendiente.
@@ -16,7 +16,7 @@ de 3–4 MB) y avisarme: yo los convierto a `.jpg`, los recomprimo y los conecto
 
 ## 1. LOGO — variante A (para cabecera clara)
 
-> A flat vector logo for a garage door repair company called "Flower Garage Door
+> A flat vector logo for a garage door repair company called "Flowers Garage Door
 > Repair". The mark is a single stylized flower seen from the front: five rounded
 > petals arranged around a circular center. Each petal is drawn as a small garage
 > door — three horizontal slats separated by thin gaps — so the flower reads as a
@@ -60,7 +60,7 @@ detalle importante en el centro-izquierda**.
 > signage, no brand names, no watermark. Horizontal 16:9 composition with open sky
 > and empty wall space on the left side for a headline overlay.
 
-## 4. `why-garage.jpg` — sección "Why {ciudad} chooses Flower"
+## 4. `why-garage.jpg` — sección "Why {ciudad} chooses Flowers"
 
 Formato: **4:3 vertical-ish horizontal**, 1200×900. Se ve entera dentro de una
 tarjeta redondeada, con una etiqueta caléndula abajo a la izquierda.
