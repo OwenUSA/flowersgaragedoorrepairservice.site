@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /img/_originales/
 
-Sitemap: https://flowergaragedoorrepairservice.site/sitemap.xml
+Sitemap: https://flowersgaragedoorrepairservice.site/sitemap.xml

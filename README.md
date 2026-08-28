@@ -1,4 +1,4 @@
-# Flower Garage Door Repair — flowergaragedoorrepairservice.site
+# Flower Garage Door Repair — flowersgaragedoorrepairservice.site
 
 Sitio estático en HTML + CSS puro (sin JavaScript, sin librerías, sin dependencias
 externas). Mismo formato que la referencia de Trevino, con paleta cálida propia.
@@ -6,9 +6,9 @@ externas). Mismo formato que la referencia de Trevino, con paleta cálida propia
 ## ⚠️ Antes de publicar
 
 - [ ] **Teléfono real.** El actual, `(561) 703-4820`, es inventado (ver abajo cómo cambiarlo).
-- [ ] **Correo real.** `privacy@flowergaragedoorrepairservice.site` aparece en el
+- [ ] **Correo real.** `privacy@flowersgaragedoorrepairservice.site` aparece en el
       apartado 7 y en el 12 de `privacy-policy.html` — **2 sustituciones**.
-      `service@flowergaragedoorrepairservice.site` es el correo de contacto del resto del sitio.
+      `service@flowersgaragedoorrepairservice.site` es el correo de contacto del resto del sitio.
 - [ ] Enlaces de redes sociales del pie (están en `#`).
 - [x] ~~Fotos reales en `img/`~~ — conectadas el 28 ago 2026.
 - [x] ~~SEO~~ — hecho el 28 ago 2026 (ver más abajo). Queda lo de fuera del código: Google Business, Search Console y el envío del sitemap.
@@ -40,9 +40,9 @@ Subí todo a la raíz del hosting.
 | Dato | Valor actual |
 |---|---|
 | Marca | Flower Garage Door Repair |
-| Dominio | flowergaragedoorrepairservice.site |
+| Dominio | flowersgaragedoorrepairservice.site |
 | Teléfono | +1 (561) 703-4820 — *inventado, cambiar* |
-| Email | service@flowergaragedoorrepairservice.site |
+| Email | service@flowersgaragedoorrepairservice.site |
 | Despacho principal | 550 SE 6th Ave, Ste 17, Delray Beach, FL 33483 |
 | Horario | Lun–Sáb 7:00 AM – 9:00 PM · Dom y feriados: emergencias 24/7 |
 
