@@ -1,0 +1,27 @@
+IMAGENES DEL SITIO  (conectadas el 28 ago 2026)
+===============================================
+
+En uso:
+
+  logo.png             -> logo de la cabecera (PNG con transparencia real, 512x512)
+  logo-light.png       -> el mismo logo con el contorno en crema, para el PIE oscuro.
+                          Si se cambia el logo hay que regenerar LOS DOS.
+  home-hero.jpg        -> fondo del hero de la home           1920x1072
+  hero-garage.jpg      -> fondo del hero de las 5 ciudades    1920x1072
+  why-garage.jpg       -> "Why {ciudad} chooses Flower"       1200x896
+  process-garage.jpg   -> "How a {ciudad} visit works"        1200x896
+
+Total servido: 1,33 MB (los originales de Gemini pesaban 16 MB).
+
+_originales/  -> los .jfif tal cual los devolvio Gemini. No borrar: si hay que
+                 recomprimir o recortar otra vez, se relee de ahi, nunca del .jpg
+                 ya comprimido.
+
+Descartada por Owen (28 ago 2026):
+
+  about-garage.jpg     -> NO se hara. El bloque "About" de la home se queda con
+                          la textura de porton dibujada con CSS, que funciona
+                          bien.
+
+Si se sustituye alguna foto: mismo nombre y misma proporcion, y volver a
+comprimir (calidad 82, ancho 1920 para los heroes y 1200 para las otras dos).
