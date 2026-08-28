@@ -1,13 +1,14 @@
 # Flowers Garage Door Repair — flowersgaragedoorrepairservice.site
 
-Sitio estático en HTML + CSS puro (sin JavaScript, sin librerías, sin dependencias
-externas). Mismo formato que la referencia de Trevino, con paleta cálida propia.
+Aplicación **Next.js** (App Router) que se compila a un sitio estático: el HTML y
+el CSS que salen del build no necesitan servidor ni traen JavaScript de la propia
+página. Mismo formato que la referencia de Trevino, con paleta cálida propia.
 
 ## ⚠️ Antes de publicar
 
 - [ ] **Teléfono real.** El actual, `(561) 703-4820`, es inventado (ver abajo cómo cambiarlo).
 - [ ] **Correo real.** `privacy@flowersgaragedoorrepairservice.site` aparece en el
-      apartado 7 y en el 12 de `privacy-policy.html` — **2 sustituciones**.
+      apartado 7 y en el 12 de la política. Se cambia en `data/site.js`, `site.privacyEmail`.
       `service@flowersgaragedoorrepairservice.site` es el correo de contacto del resto del sitio.
 - [ ] Enlaces de redes sociales del pie (están en `#`).
 - [x] ~~Fotos reales en `img/`~~ — conectadas el 28 ago 2026.
