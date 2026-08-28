@@ -136,6 +136,7 @@ const faqLd = {
 export default function HomePage() {
   return (
     <>
+      <link rel="preload" as="image" href={site.heroHome} fetchPriority="high" />
       <TopBar />
       <Header variant="home" />
 

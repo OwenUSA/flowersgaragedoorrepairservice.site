@@ -10,10 +10,10 @@ export function Logo({ href = '/', light = false, ariaLabel }) {
     <Link className="logo" href={href} aria-label={ariaLabel}>
       <span className="logo__mark">
         <img
-          src={light ? '/img/logo-light.png' : '/img/logo.png'}
-          alt={site.brand}
-          width={46}
-          height={46}
+          src={light ? site.logo.footer : site.logo.header}
+          alt={site.logo.alt}
+          width={site.logo.width}
+          height={site.logo.height}
         />
       </span>
       <span className="logo__text">
