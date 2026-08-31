@@ -6,7 +6,7 @@ página. Mismo formato que la referencia de Trevino, con paleta cálida propia.
 
 ## ⚠️ Antes de publicar
 
-- [ ] **Teléfono real.** El actual, `(561) 703-4820`, es inventado (ver abajo cómo cambiarlo).
+- [x] ~~**Teléfono real**~~ — `(561) 250-8965`, puesto el 31 ago 2026.
 - [ ] **Correo real.** `privacy@flowersgaragedoorrepairservice.site` aparece en el
       apartado 7 y en el 12 de la política. Se cambia en `data/site.js`, `site.privacyEmail`.
       `service@flowersgaragedoorrepairservice.site` es el correo de contacto del resto del sitio.
@@ -35,14 +35,17 @@ Vercel / Netlify / GitHub Actions. **`out/` no se commitea** (está en
 ```
 app/layout.jsx              <html>, CSS global y metadata compartida
 app/page.jsx                /                      home
-app/[city]/page.jsx         /DelrayBeach /Doral /FortLauderdale /Jupiter /WestPalmBeach
+app/[city]/page.jsx         /Jupiter /DelrayBeach /Doral /FortLauderdale /WestPalmBeach
+app/about-us/page.jsx       /about-us
+app/contact-us/page.jsx     /contact-us
 app/privacy-policy/page.jsx /privacy-policy
-components/Header.jsx       cabecera + navbar + desplegable de Services
+components/Header.jsx       cabecera + navbar de cuatro páginas
 components/Footer.jsx       pie de 4 columnas y la barra de llamada movil
 components/TopBar.jsx       franja superior de la home
 components/Icons.jsx        los 21 SVG del sitio, por nombre: <Icon name="pin" />
 data/site.js                TODO el contenido: marca, telefono, ciudades, servicios, FAQ
 css/styles.css              estilos base (header, navbar, footer, botones, tarjetas)
+css/pages.css               sólo lo nuevo de About Us y Contact Us
 css/location.css            componentes de las paginas de ubicacion
 public/img/                 logo y fotos, servidas en /img/...
 public/robots.txt · public/sitemap.xml · public/favicon.svg
@@ -76,9 +79,9 @@ es la legal, de `/privacy-policy.html` a **`/privacy-policy`**.
 |---|---|
 | Marca | Flowers Garage Door Repair |
 | Dominio | flowersgaragedoorrepairservice.site |
-| Teléfono | +1 (561) 703-4820 — *inventado, cambiar* |
+| Teléfono | +1 (561) 250-8965 |
 | Email | service@flowersgaragedoorrepairservice.site |
-| Despacho principal | 550 SE 6th Ave, Ste 17, Delray Beach, FL 33483 |
+| Despacho principal | 126 N River Dr W, Jupiter, FL 33458 |
 | Horario | Lun–Sáb 7:00 AM – 9:00 PM · Dom y feriados: emergencias 24/7 |
 
 ### Cambiar el teléfono
@@ -87,18 +90,18 @@ Ahora vive en un solo sitio: `data/site.js`, objeto `site.phone`. Hay que cambia
 los cuatro campos (`href`, `display`, `long`, `schema`) y ya se propaga a las 7
 páginas, al JSON-LD y al pie:
 
-- `href: 'tel:+15617034820'`
-- `display: '(561) 703-4820'`
+- `href: 'tel:+15612508965'`
+- `display: '(561) 250-8965'`
 - `long` y `schema`, para el texto largo y el JSON-LD
 
 ### Coverage areas
 
 | Ciudad | URL | Dirección | Condado |
 |---|---|---|---|
+| **Jupiter** *(despacho principal)* | /Jupiter | 126 N River Dr W, Jupiter, FL 33458 | Palm Beach |
 | Delray Beach | /DelrayBeach | 550 SE 6th Ave, Ste 17, Delray Beach, FL 33483 | Palm Beach |
 | Doral | /Doral | 6700 NW 77th Ct, Unit 1017, Doral, FL 33122 | Miami-Dade |
 | Fort Lauderdale | /FortLauderdale | 599 SW 2nd Ave, Fl 191, Fort Lauderdale, FL 33301 | Broward |
-| Jupiter | /Jupiter | 601 Heritage Dr, Ste 3003, Jupiter, FL 33458 | Palm Beach |
 | West Palm Beach | /WestPalmBeach | 500 S Australian Ave, Fl 10, West Palm Beach, FL 33401 | Palm Beach |
 
 La home enlaza a las cinco desde "Coverage Areas"; cada página de ciudad enlaza a
@@ -110,7 +113,7 @@ las otras cuatro en "Other nearby locations". Cada una lleva su propio JSON-LD
 Idénticas en estructura; sólo cambian ciudad, dirección, ZIP, mapa, barrios y el
 texto de conocimiento local. Secciones, en orden:
 
-1. Header sticky — logo, navbar estándar, botón *Call Now*
+1. Header sticky — logo, navbar de cuatro páginas, botón *Call Now*
 2. Hero — breadcrumb `Home / Locations / Ciudad`, badge `FL · ZIP`, H1 con ciudad + ZIP,
    párrafo, botones *Call* y *See the coverage map*, y 4 tarjetas de garantía
 3. Mapa + tarjeta **Garage door service in {Ciudad} — coverage** (despacho, teléfono, email, horario)
@@ -123,16 +126,41 @@ texto de conocimiento local. Secciones, en orden:
 10. Banda CTA *Ready to fix that door?*
 11. Footer de 4 columnas + barra de llamada fija en móvil
 
-## Navbar estándar
+## Navbar (31 ago 2026: cuatro páginas, sin Services)
 
-Los cinco apartados de siempre, iguales en las 7 páginas: **Home · Services
-(desplegable) · About us · Contact · Privacy policy**, más el botón *Call Now*.
+Cuatro apartados, iguales en las 9 páginas, y los cuatro son **páginas reales, no
+anclas**: **Home · About Us · Contact Us · Privacy Policy**, más el botón *Call
+Now* y un *Book a Visit* que lleva a `/contact-us`.
 
-El desplegable de Services **no lleva JavaScript**: abre con `:hover` y con
-`:focus-within`, tiene puente invisible sobre el hueco, fondo dorado `#f5a623`
-(tokens `--drop-bg` / `--drop-ink`) y las cinco subsecciones de siempre: Garage
-Door Repair, Installation, Springs, Openers, Overhead Doors. En móvil el panel
-pasa a `position: static` y queda desplegado dentro del menú.
+```
+data/site.js  ->  export const nav = [...]     los cuatro apartados
+Header        ->  <Header current="/about-us" />  marca el activo con .is-current
+```
+
+**Ya no lleva el desplegable de Services.** Owen lo pidió así el 31 de agosto de
+2026, igual que en Trevino: es una excepción consciente al estándar de las otras
+landings, no un olvido. La rejilla de servicios sigue en la home (`/#services`),
+sólo desapareció del menú; el pie mantiene el enlace.
+
+Como About y Contact dejaron de ser anclas, las referencias fuera de la home son
+absolutas (`/#services`, `/#areas`) y el `CallBar` de las páginas sueltas recibe
+`secondHref="/#areas"`.
+
+### About Us y Contact Us
+
+Dos páginas nuevas, con el mismo esqueleto que el resto del sitio y sin CSS de
+marca tocado: lo que hacía falta de nuevo (`page-hero`, `stat-strip`,
+`.is-current`) vive en **`css/pages.css`**.
+
+| | About Us | Contact Us |
+|---|---|---|
+| Hero | cabecera ciruela sin foto | cabecera ciruela sin foto |
+| Cuerpo | cifras, quiénes somos, 6 reglas, los 4 pasos de una visita, los 5 puntos de despacho | 3 vías de contacto, ficha del despacho principal + mapa, "have this ready when you call", los 5 puntos |
+| JSON-LD | `AboutPage` + `BreadcrumbList` | `ContactPage` + `LocalBusiness` con `contactPoint` + `BreadcrumbList` |
+| Contenido | `aboutValues`, `aboutStats` en `data/site.js` | `contactChannels`, `beforeYouCall` en `data/site.js` |
+
+El mapa de Contact Us sale del mismo `mapQuery` que el resto: cambiar la
+dirección del despacho mueve el mapa de la home y el de Contact Us a la vez.
 
 ## Reglas de contenido aplicadas
 

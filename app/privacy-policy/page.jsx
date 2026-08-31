@@ -40,7 +40,7 @@ const toc = [
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <Header variant="plain" />
+      <Header current="/privacy-policy" />
 
       <main className="legal">
         <div className="container legal__inner">

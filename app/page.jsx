@@ -22,7 +22,7 @@ import {
 
 const title = `Garage Door Repair Miami & South Florida | ${site.brandFirst} Garage Door`;
 const description =
-  '24/7 garage door repair in Miami, Broward & Palm Beach County: springs, openers, cables, new doors. Same-day service, we come to you. Call (561) 703-4820.';
+  '24/7 garage door repair in Miami, Broward & Palm Beach County: springs, openers, cables, new doors. Same-day service, we come to you. Call (561) 250-8965.';
 
 export const metadata = {
   title: { absolute: title },
@@ -32,7 +32,7 @@ export const metadata = {
     'garage door spring replacement',
     'garage door opener repair',
     'Miami garage door repair',
-    'Delray Beach garage door',
+    'Jupiter garage door',
     'South Florida garage door service',
   ],
   alternates: { canonical: '/' },
@@ -138,7 +138,7 @@ export default function HomePage() {
     <>
       <link rel="preload" as="image" href={site.heroHome} fetchPriority="high" />
       <TopBar />
-      <Header variant="home" />
+      <Header current="/" />
 
       {/* ============ HERO ============ */}
       <section className="hero">

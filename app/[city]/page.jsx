@@ -129,7 +129,7 @@ export default async function CityPage({ params }) {
   return (
     <>
       <link rel="preload" as="image" href={site.heroCity} fetchPriority="high" />
-      <Header variant="city" />
+      <Header />
 
       {/* ============ HERO ============ */}
       <section className="hero hero--loc">

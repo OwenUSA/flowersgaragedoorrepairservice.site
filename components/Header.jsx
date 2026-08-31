@@ -1,10 +1,7 @@
 import Link from 'next/link';
 import { Icon } from './Icons';
-import { site, navServices } from '../data/site';
+import { site, nav } from '../data/site';
 
-// variant: 'home'   -> los anclajes apuntan a las secciones de la propia home
-//          'city'   -> a las secciones de la pagina de ciudad
-//          'plain'  -> pagina sin esas secciones (legal): todo va a la home
 export function Logo({ href = '/', light = false, ariaLabel }) {
   return (
     <Link className="logo" href={href} aria-label={ariaLabel}>
@@ -24,19 +21,11 @@ export function Logo({ href = '/', light = false, ariaLabel }) {
   );
 }
 
-export default function Header({ variant = 'home' }) {
-  const prefix = variant === 'plain' ? '/' : '';
-  const homeHref = variant === 'home' ? '#top' : '/';
-  const servicesHref = `${prefix}#services`;
-
-  const dropHref = (svc) => {
-    if (variant === 'plain') return `/#${svc.homeHash}`;
-    if (variant === 'home') return `#${svc.homeHash}`;
-    return `#${svc.hash}`;
-  };
-
+// `current` es el href de la pagina que se esta pintando; se marca en el nav.
+// El id="top" lo lleva la topbar en la home, asi que aqui solo en el resto.
+export default function Header({ current = '' }) {
   return (
-    <header className="header" id={variant === 'home' ? undefined : 'top'}>
+    <header className="header" id={current === '/' ? undefined : 'top'}>
       <div className="container header__inner">
         <Logo href="/" ariaLabel={`${site.brand} — home`} />
 
@@ -47,35 +36,21 @@ export default function Header({ variant = 'home' }) {
 
         <nav className="nav" aria-label="Main">
           <ul className="nav__list">
-            <li>
-              {variant === 'home' ? <a href={homeHref}>Home</a> : <Link href="/">Home</Link>}
-            </li>
-            <li className="navdrop">
-              <a href={servicesHref}>
-                Services
-                <Icon name="chevronDown" className="navdrop__chev" />
-              </a>
-              <div className="navdrop__panel">
-                {navServices.map((svc) => (
-                  <a key={svc.label} href={dropHref(svc)}>
-                    {svc.label}
-                  </a>
-                ))}
-              </div>
-            </li>
-            <li>
-              <a href={`${prefix}#about`}>About us</a>
-            </li>
-            <li>
-              <a href={`${prefix}#contact`}>Contact</a>
-            </li>
-            <li>
-              <Link href="/privacy-policy">Privacy policy</Link>
-            </li>
+            {nav.map((n) => (
+              <li key={n.href}>
+                <Link
+                  href={n.href}
+                  className={n.href === current ? 'is-current' : undefined}
+                  aria-current={n.href === current ? 'page' : undefined}
+                >
+                  {n.label}
+                </Link>
+              </li>
+            ))}
           </ul>
-          <a className="btn btn--primary btn--sm btn--quote" href={site.phone.href}>
-            Call Now
-          </a>
+          <Link className="btn btn--primary btn--sm btn--quote" href="/contact-us">
+            Book a Visit
+          </Link>
         </nav>
 
         <div className="header__actions">

@@ -1,0 +1,71 @@
+/* ============================================================================
+   Paginas sueltas del navbar: About Us y Contact Us.
+   styles.css y location.css no se tocan (son la identidad de la marca); todo lo
+   que hace falta de nuevo vive aqui y usa las mismas variables de :root.
+   ========================================================================== */
+
+/* ---- Apartado activo del navbar ---------------------------------------- */
+.nav__list > li > a.is-current { color: var(--rose-dark); border-bottom-color: var(--accent); }
+
+/* ---- Cabecera de pagina interior ---------------------------------------
+   La home y las de ciudad tienen su propio hero con foto. Estas dos no
+   llevan imagen: gradiente ciruela con el resplandor calendula del sitio. */
+.page-hero {
+  position: relative;
+  background:
+    radial-gradient(880px 420px at 84% 6%, rgba(245, 166, 35, .26), transparent 62%),
+    linear-gradient(118deg, var(--deep-900) 0%, var(--deep-800) 52%, var(--deep-700) 100%);
+  color: #fff;
+  padding: 62px 0 58px;
+  overflow: hidden;
+  border-bottom: 4px solid var(--accent);
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 58px 58px;
+  pointer-events: none;
+}
+.page-hero__inner { position: relative; z-index: 2; max-width: 840px; }
+.page-hero h1 { color: #fff; margin-bottom: .34em; }
+.page-hero h1 span { color: var(--accent-light); }
+.page-hero__lead {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #e7cec6;
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+.page-hero .crumbs { margin-bottom: 16px; }
+.page-hero .hero__badge { margin-bottom: 18px; }
+
+/* ---- Tira de cifras ----------------------------------------------------- */
+.stat-strip { background: var(--deep-800); padding: 30px 0; }
+.stat-strip__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.stat-strip__item { text-align: center; color: #fff; }
+.stat-strip__item strong {
+  display: block;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--accent);
+  letter-spacing: -.02em;
+}
+.stat-strip__item span { display: block; font-size: .87rem; color: #d3b2aa; margin-top: 6px; }
+
+/* ---- Lista compacta dentro de un panel ---------------------------------- */
+.checklist--tight li { margin-bottom: 11px; }
+.checklist--tight span { font-size: .91rem; }
+
+/* ---- Responsive --------------------------------------------------------- */
+@media (max-width: 900px) {
+  .stat-strip__grid { grid-template-columns: repeat(2, 1fr); gap: 26px; }
+}
+@media (max-width: 640px) {
+  .page-hero { padding: 46px 0 42px; }
+  .page-hero__lead { font-size: 1.02rem; }
+  .stat-strip__item strong { font-size: 1.7rem; }
+}

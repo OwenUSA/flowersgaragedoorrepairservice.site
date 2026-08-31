@@ -1,5 +1,6 @@
 import '../css/styles.css';
 import '../css/location.css';
+import '../css/pages.css';
 import { site } from '../data/site';
 
 export const metadata = {

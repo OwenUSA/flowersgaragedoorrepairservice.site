@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://flowersgaragedoorrepairservice.site/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -12,10 +12,20 @@
     </image:image>
   </url>
   <url>
-    <loc>https://flowersgaragedoorrepairservice.site/DelrayBeach/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <loc>https://flowersgaragedoorrepairservice.site/Jupiter/</loc>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flowersgaragedoorrepairservice.site/img/hero-garage.jpg</image:loc>
+      <image:title>Garage door repair in Jupiter, FL 33458</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flowersgaragedoorrepairservice.site/DelrayBeach/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://flowersgaragedoorrepairservice.site/img/hero-garage.jpg</image:loc>
       <image:title>Garage door repair in Delray Beach, FL 33483</image:title>
@@ -23,7 +33,7 @@
   </url>
   <url>
     <loc>https://flowersgaragedoorrepairservice.site/Doral/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -33,7 +43,7 @@
   </url>
   <url>
     <loc>https://flowersgaragedoorrepairservice.site/FortLauderdale/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -42,18 +52,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://flowersgaragedoorrepairservice.site/Jupiter/</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://flowersgaragedoorrepairservice.site/img/hero-garage.jpg</image:loc>
-      <image:title>Garage door repair in Jupiter, FL 33458</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://flowersgaragedoorrepairservice.site/WestPalmBeach/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -62,8 +62,20 @@
     </image:image>
   </url>
   <url>
+    <loc>https://flowersgaragedoorrepairservice.site/about-us/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowersgaragedoorrepairservice.site/contact-us/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://flowersgaragedoorrepairservice.site/privacy-policy/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

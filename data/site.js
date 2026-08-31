@@ -7,12 +7,11 @@ export const site = {
   brandRest: 'Garage Door Repair',
   domain: 'flowersgaragedoorrepairservice.site',
   url: 'https://flowersgaragedoorrepairservice.site',
-  // OJO: telefono inventado, sustituir por el real antes de publicar
   phone: {
-    href: 'tel:+15617034820',
-    display: '(561) 703-4820',
-    long: '1 (561) 703-4820',
-    schema: '+1-561-703-4820',
+    href: 'tel:+15612508965',
+    display: '(561) 250-8965',
+    long: '1 (561) 250-8965',
+    schema: '+1-561-250-8965',
   },
   logo: {
     header: '/img/logo.png',
@@ -33,9 +32,27 @@ export const site = {
 };
 
 // La ciudad del despacho principal, que es la que sale en la barra superior y el pie
-export const mainCitySlug = 'DelrayBeach';
+export const mainCitySlug = 'Jupiter';
 
 export const cities = [
+  {
+    slug: 'Jupiter',
+    name: 'Jupiter',
+    zip: '33458',
+    addr1: '126 N River Dr W',
+    street: 'North River Drive West',
+    county: 'Palm Beach County',
+    // OJO: coordenadas aproximadas a la manzana. Sustituir por el pin real de Google Business.
+    lat: 26.9355,
+    lon: -80.1005,
+    mapQuery: '126 N River Dr W Jupiter FL 33458',
+    tag: 'Main Dispatch',
+    coverageMeta: 'Where the trucks start the day · Dispatch desk open 24/7',
+    main: true,
+    note:
+      'Jupiter sits on the northern coastal strip of Palm Beach County, where the wind zone is unforgiving and most of the housing stock lives inside an HOA. That means two things for a garage door here: the replacement has to carry the right wind-load rating and permit, and the panel style and color usually have to match what the association already approved. We handle both, and on the older Abacoa and Jupiter Farms doors we can usually rebuild the hardware instead of replacing the whole door.',
+    neighborhoods: ['Jupiter', 'Abacoa', 'Jupiter Farms', 'Tequesta', 'Juno Beach', 'Palm Beach Gardens', 'North Palm Beach', 'Hobe Sound', 'Singer Island', 'Jupiter Inlet Colony'],
+  },
   {
     slug: 'DelrayBeach',
     name: 'Delray Beach',
@@ -46,9 +63,8 @@ export const cities = [
     lat: 26.459,
     lon: -80.069,
     mapQuery: '550 SE 6th Ave Delray Beach FL 33483',
-    tag: 'Main Dispatch',
-    coverageMeta: 'Where the trucks start the day · Dispatch desk open 24/7',
-    main: true,
+    tag: 'Palm Beach County',
+    coverageMeta: 'Serving Delray Beach, Boynton Beach, Boca Raton & Highland Beach',
     note:
       'Delray Beach sits in the wind-borne debris region, so any new door we install here is wind-load rated for the opening and permitted through Palm Beach County. Add the salt air coming off A1A and you get the other half of our local work: rollers, hinges, cables and bottom brackets that rust from the inside out on the barrier-island and beachside streets. On the older downtown homes we mostly rebalance single-car doors and swap corroded hardware for galvanized parts.',
     neighborhoods: ['Delray Beach', 'Atlantic Avenue', 'Lake Ida', 'Tropic Isle', 'Del-Ida Park', 'Highland Beach', 'Gulf Stream', 'Ocean Ridge', 'Boynton Beach', 'Boca Raton', 'Lake Worth'],
@@ -86,22 +102,6 @@ export const cities = [
     neighborhoods: ['Fort Lauderdale', 'Las Olas', 'Victoria Park', 'Rio Vista', 'Coral Ridge', 'Wilton Manors', 'Oakland Park', 'Plantation', 'Sunrise', 'Davie', 'Dania Beach', 'Pompano Beach'],
   },
   {
-    slug: 'Jupiter',
-    name: 'Jupiter',
-    zip: '33458',
-    addr1: '601 Heritage Dr, Ste 3003',
-    street: 'Heritage Drive',
-    county: 'Palm Beach County',
-    lat: 26.933,
-    lon: -80.112,
-    mapQuery: '601 Heritage Dr Jupiter FL 33458',
-    tag: 'Palm Beach County',
-    coverageMeta: 'Serving Jupiter, Palm Beach Gardens, Juno Beach & Tequesta',
-    note:
-      'Jupiter sits on the northern coastal strip of Palm Beach County, where the wind zone is unforgiving and most of the housing stock lives inside an HOA. That means two things for a garage door here: the replacement has to carry the right wind-load rating and permit, and the panel style and color usually have to match what the association already approved. We handle both, and on the older Abacoa and Jupiter Farms doors we can usually rebuild the hardware instead of replacing the whole door.',
-    neighborhoods: ['Jupiter', 'Abacoa', 'Jupiter Farms', 'Tequesta', 'Juno Beach', 'Palm Beach Gardens', 'North Palm Beach', 'Hobe Sound', 'Singer Island', 'Jupiter Inlet Colony'],
-  },
-  {
     slug: 'WestPalmBeach',
     name: 'West Palm Beach',
     zip: '33401',
@@ -123,13 +123,13 @@ export const mainCity = cities.find((c) => c.slug === mainCitySlug);
 
 export const getCity = (slug) => cities.find((c) => c.slug === slug);
 
-// Los cinco del desplegable de Services, estandar en todas las landings
-export const navServices = [
-  { label: 'Garage Door Repair', hash: 'repair', homeHash: 'services' },
-  { label: 'Garage Door Installation', hash: 'installation', homeHash: 'installation' },
-  { label: 'Garage Door Springs', hash: 'springs', homeHash: 'springs' },
-  { label: 'Garage Door Openers', hash: 'openers', homeHash: 'openers' },
-  { label: 'Overhead Doors', hash: 'overhead', homeHash: 'overhead' },
+// Navbar: cuatro paginas reales, sin desplegable de Services.
+// Excepcion consciente de Owen (31 ago 2026), igual que en Trevino.
+export const nav = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about-us' },
+  { label: 'Contact Us', href: '/contact-us' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
 ];
 
 // Rejilla de servicios de la home
@@ -328,3 +328,77 @@ export const offerCatalog = [
 
 export const mapEmbed = (query) =>
   `https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=m&z=15&output=embed`;
+
+// ============================================================ About Us
+export const aboutValues = [
+  {
+    icon: 'truck',
+    title: 'The door never moves',
+    text: 'We are a mobile operation, not a shop. Springs, cables, rollers, openers and hardware ride on the truck, so the repair happens in your driveway while you keep the car where it is.',
+  },
+  {
+    icon: 'shieldCheck',
+    title: 'Nothing starts without a yes',
+    text: 'The technician inspects the whole door, explains what failed and hands you the plan in writing. You decide what gets done. No work begins before you say so.',
+  },
+  {
+    icon: 'gear',
+    title: 'Built for Florida weather',
+    text: 'Salt air and humidity eat galvanised steel from the inside out. We fit corrosion-resistant hardware and wind-load rated doors, and we pull the county permit when a replacement needs one.',
+  },
+  {
+    icon: 'clock',
+    title: 'Someone answers at 3 AM',
+    text: 'The emergency line rings a technician, not a call centre queue. A car trapped behind a jammed door at midnight is exactly the call we are set up for.',
+  },
+  {
+    icon: 'wrench',
+    title: 'Our own technicians',
+    text: 'No subcontractors and no handing your job to a second crew. The person who inspects the door is the person who repairs it and signs the work.',
+  },
+  {
+    icon: 'trophy',
+    title: 'We come back if it fails',
+    text: 'If a repair we performed fails inside the warranty period we return and make it right at no charge. That is the whole policy, printed on the invoice.',
+  },
+];
+
+export const aboutStats = [
+  { figure: '4,800+', label: 'Garage doors serviced in South Florida' },
+  { figure: '5', label: 'Dispatch points, from Miami to Jupiter' },
+  { figure: '24/7', label: 'Emergency line, holidays included' },
+  { figure: '1 visit', label: 'What most repairs take, start to finish' },
+];
+
+// ============================================================ Contact Us
+export const contactChannels = [
+  {
+    icon: 'phone',
+    title: 'Call the dispatch line',
+    text: 'The fastest way to get a truck moving. Tell us what the door is doing and we book a window the same day whenever the schedule allows.',
+    items: ['Answered 24 hours, holidays included', 'Emergency calls jump the queue', 'No menu to work through'],
+    cta: 'call',
+  },
+  {
+    icon: 'mailSquare',
+    title: 'Text us a photo',
+    text: 'A picture of the spring, the opener label or the panel that came off track tells us which parts to load before the technician leaves.',
+    items: ['Send it to the same number', 'Useful for quotes on a new door', 'Reply during dispatch hours'],
+    cta: 'call',
+  },
+  {
+    icon: 'mail',
+    title: 'Email the office',
+    text: 'Best for property managers, HOA work and anything with paperwork attached — permits, association approvals or a schedule across several units.',
+    items: ['Answered next business day', 'Attach plans or approvals', 'Commercial and multi-unit welcome'],
+    cta: 'mail',
+  },
+];
+
+export const beforeYouCall = [
+  { strong: 'Is the door stuck open or closed?', text: 'It changes how urgent the visit is and which parts we load.' },
+  { strong: 'Did you hear a bang?', text: 'That is almost always a torsion spring. Do not run the opener again.' },
+  { strong: 'What brand is the opener?', text: 'The label is on the motor housing — it saves the technician a trip for parts.' },
+  { strong: 'Single or double door?', text: 'A double door carries different spring weights and hardware.' },
+  { strong: 'Your address and a gate code', text: 'We come to you, so the crew needs to be able to reach the driveway.' },
+];

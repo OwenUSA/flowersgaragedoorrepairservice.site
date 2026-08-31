@@ -38,13 +38,13 @@ export default function Footer({ variant = 'home', city = null, bottomPath = '' 
                 <a href={`${prefix}#services`}>Services</a>
               </li>
               <li>
-                <a href={`${prefix}#about`}>About us</a>
+                <Link href="/about-us">About us</Link>
               </li>
               <li>
                 <a href={`${prefix}#areas`}>{variant === 'city' ? 'Locations' : 'Coverage areas'}</a>
               </li>
               <li>
-                <a href={`${prefix}#contact`}>Contact</a>
+                <Link href="/contact-us">Contact us</Link>
               </li>
               <li>
                 <Link href="/privacy-policy">Privacy policy</Link>
