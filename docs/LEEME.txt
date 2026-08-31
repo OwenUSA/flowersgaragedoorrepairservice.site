@@ -1,5 +1,5 @@
-IMAGENES DEL SITIO  (conectadas el 28 ago 2026)
-===============================================
+IMAGENES DEL SITIO  (conectadas el 28 ago 2026; about-garage el 31)
+===================================================================
 
 En uso:
 
@@ -10,18 +10,20 @@ En uso:
   hero-garage.jpg      -> fondo del hero de las 5 ciudades    1920x1072
   why-garage.jpg       -> "Why {ciudad} chooses Flowers"       1200x896
   process-garage.jpg   -> "How a {ciudad} visit works"        1200x896
+  about-garage.jpg     -> bloque "About" de la home Y de        1200x896
+                          /about-us (las dos usan .split__media)
 
-Total servido: 1,33 MB (los originales de Gemini pesaban 16 MB).
+Total servido: 1,6 MB (los originales de Gemini pesaban 22 MB).
 
 _originales/  -> los .jfif tal cual los devolvio Gemini. No borrar: si hay que
                  recomprimir o recortar otra vez, se relee de ahi, nunca del .jpg
                  ya comprimido.
 
-Descartada por Owen (28 ago 2026):
-
-  about-garage.jpg     -> NO se hara. El bloque "About" de la home se queda con
-                          la textura de porton dibujada con CSS, que funciona
-                          bien.
+Sobre about-garage.jpg: Owen la descarto el 28 de agosto y la volvio a pedir
+el 31. Entra como fondo de .split__media en css/styles.css, no como <img>. Al
+conectarla hubo que BAJAR EL VELO de ese bloque del 82 % al 45 %: con la textura
+CSS el velo tapaba un dibujo plano, con foto se la comia entera. Debajo de la
+foto se dejo la textura de porton como respaldo por si el archivo falta.
 
 Si se sustituye alguna foto: mismo nombre y misma proporcion, y volver a
 comprimir (calidad 82, ancho 1920 para los heroes y 1200 para las otras dos).

@@ -355,7 +355,8 @@ li { margin-bottom: .45em; }
   border-radius: 18px;
   min-height: 420px;
   background:
-    linear-gradient(160deg, rgba(42, 15, 22, .82), rgba(131, 52, 58, .6)),
+    linear-gradient(160deg, rgba(42, 15, 22, .45), rgba(131, 52, 58, .28)),
+    url("/img/about-garage.jpg") center / cover no-repeat,
     repeating-linear-gradient(180deg, #e8d5cc 0 42px, #dbc2b8 42px 46px);
   box-shadow: var(--shadow);
   position: relative;

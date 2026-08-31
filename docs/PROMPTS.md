@@ -1,9 +1,11 @@
 # Prompts para Gemini — Flowers Garage Door Repair
 
-> **Estado (28 ago 2026):** entregados y conectados el logo, `hero-garage`,
-> `why-garage`, `process-garage` y `home-hero`. No queda ninguna pendiente.
-> El nº 7 (`about-garage.jpg`) lo descartó Owen. El nº 2 (logo claro) NO hizo falta
+> **Estado (31 ago 2026):** entregados y conectados el logo, `hero-garage`,
+> `why-garage`, `process-garage` y `home-hero`. El nº 2 (logo claro) NO hizo falta
 > pedirlo: se generó recoloreando el logo A por luminancia.
+>
+> El nº 7 (`about-garage.jpg`) entró el 31 de agosto: Owen la había descartado
+> el 28 y la volvió a pedir. **Ya no queda ninguna pendiente.**
 
 Paleta de la marca (usarla literalmente en los prompts):
 `#2a0f16` ciruela oscuro · `#b8483c` terracota · `#f5a623` caléndula ·
@@ -91,13 +93,9 @@ herramienta y herraje, no persona entera.
 
 ---
 
-## Opcionales (si las quieres, dímelo y las conecto)
+## Las de la home
 
-Ahora mismo la home no usa fotos: el hero es un degradado ciruela y el bloque
-"About" es una textura de portón dibujada con CSS. Funciona, pero con foto queda
-mejor. Si generas estas dos, hay que tocar el CSS (poco):
-
-### 6. `home-hero.jpg` — fondo del hero de la home · **16:9**, 2000×1125
+### 6. `home-hero.jpg` — fondo del hero de la home · **16:9**, 2000×1125 · ✅ hecha
 
 > Wide cinematic photograph of a warm South Florida street of single-family homes
 > at sunset, with two closed sectional garage doors visible on the right side of the
@@ -106,14 +104,32 @@ mejor. Si generas estas dos, hay que tocar el CSS (poco):
 > no text, no signage, no watermark. Wide 16:9 composition with clear open space on
 > the left third for a large headline overlay. Warm color grade, no blue hour.
 
-### 7. `about-garage.jpg` — bloque "About" de la home · **4:3**, 1200×900
+### 7. `about-garage.jpg` — bloque "About" de la home · **4:3**, 1200×896 · ✅ hecha
+
+El hueco es `.split__media`: media anchura del contenedor, 420 px de alto mínimo,
+esquinas redondeadas y **la tarjeta blanca de la cifra encima, abajo a la
+izquierda** (`place-items: end start`, 30 px de padding). Por eso el prompt pide
+esa zona vacía; el original no lo hacía.
 
 > Photograph of a service van parked in a residential driveway at golden hour with
 > its side doors open, showing organized shelves of garage door parts: coiled
-> springs, rollers, cables and tools. The van is plain warm terracotta with no logos
-> and no text on the body. Warm South Florida suburban background, palms, soft long
-> shadows. Photorealistic, warm color grade, no blue tones, no people, no readable
-> text, no license plate, no watermark. Horizontal 4:3 composition.
+> torsion springs, black nylon rollers, cables and hand tools. The van is plain
+> warm terracotta with a completely blank body — no logos, no lettering, no
+> graphics of any kind. Warm South Florida suburban background: a stucco house in
+> cream and sand tones, palms, paver driveway, long soft shadows. The van sits in
+> the upper-right two thirds of the frame; the lower-left quarter is empty
+> driveway and open shadow, with nothing important in it. Photorealistic,
+> documentary style, warm color grade — amber, terracotta and cream. No blue or
+> teal tones anywhere. No people, no readable text, no license plate, no
+> watermark. Horizontal 4:3 composition, 1200x900.
+
+**Así quedó conectada** (31 ago 2026), en `.split__media` de `css/styles.css`:
+foto de fondo con `center / cover`, el velo bajado del 82 % al 45 %
+(`rgba(42,15,22,.45)` → `rgba(131,52,58,.28)`) y la textura de portón debajo como
+respaldo. La barra caléndula/terracota de 14 px de arriba (`::before`) se quedó.
+
+Gemini abrió las puertas **traseras** en vez de las laterales que pedía el prompt.
+Se aceptó: se ve mejor la pared de muelles, rodillos y herramienta.
 
 ---
 
